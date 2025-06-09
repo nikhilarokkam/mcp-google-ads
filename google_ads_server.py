@@ -1428,7 +1428,7 @@ async def list_resources(customer_id: str) -> str:
 from fastapi import Request
 from fastapi.responses import PlainTextResponse
 
-@mcp.app.get("/", response_class=PlainTextResponse)
+@mcp.router.get("/", response_class=PlainTextResponse)
 async def root(request: Request):
     return "✅ MCP Server is running successfully!"
 
