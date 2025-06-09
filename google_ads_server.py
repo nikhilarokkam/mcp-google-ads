@@ -1425,14 +1425,6 @@ async def list_resources(customer_id: str) -> str:
     # Use your existing run_gaql function to execute this query
     return await run_gaql(customer_id, query)
 
-from fastapi import Request
-from fastapi.responses import PlainTextResponse
-
-@mcp.router.get("/", response_class=PlainTextResponse)
-async def root(request: Request):
-    return "✅ MCP Server is running successfully!"
-
-
 if __name__ == "__main__":
     # Start the MCP server on stdio transport
     mcp.run("sse")
